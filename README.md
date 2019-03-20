@@ -2,10 +2,6 @@
 A platform for exchanging academic books within the CCSIT-IAU community.
 
 This project is done by: 
-Jumana AlGhamdi
-Maryam Alayaat
-Zaina Alhadad
-Dua's Saleh
-Latifa Alolyan
+Jumana AlGhamdi, Maryam Alayaat, Zaina Alhadad, Dua'a Saleh, and Latifa Alolyan.
 
--2019
+OOP(II) - 2019
