@@ -13,7 +13,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.graphics.Point;
 
 public class AddBookKaff {
-
+// just test
 	protected Shell shell;
 	private Text BookTitleTxt;
 	private Text editionTxt;
