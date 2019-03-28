@@ -10,7 +10,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.wb.swt.SWTResourceManager;
 
 public class BooksDisplayInfoFrame {
-
+// just test 2
 	protected Shell shell;
 	private Table booksTable;
 
