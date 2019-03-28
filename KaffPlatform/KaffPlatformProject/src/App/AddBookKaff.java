@@ -13,7 +13,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.graphics.Point;
 
 public class AddBookKaff {
-
+// hello world
 	protected Shell shell;
 	private Text BookTitleTxt;
 	private Text editionTxt;
@@ -22,7 +22,7 @@ public class AddBookKaff {
 	private Text nameVlaueTxt;
 	private Text phoneTxt;
 	private Text emailTxt;
-// lol
+
 	/**
 	 * Launch the application.
 	 * @param args
