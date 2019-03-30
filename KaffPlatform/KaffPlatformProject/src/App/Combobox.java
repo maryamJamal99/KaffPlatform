@@ -44,10 +44,11 @@ public class Combobox {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\Doaa\\Pictures\\Background.jpeg"));
+		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\Background.jpeg"));
 		shell.setBackground(SWTResourceManager.getColor(255, 255, 255));
 		shell.setSize(457, 243);
 		shell.setText("\u0645\u0646\u0635\u0629 \u0643\u0627\u0641");
+		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\منصة كاف.jpg"));
 		
 		Combo combo = new Combo(shell, SWT.NONE);
 		combo.setFont(SWTResourceManager.getFont("Dubai", 14, SWT.NORMAL));
@@ -63,7 +64,7 @@ public class Combobox {
 		lblNewLabel.setText("\u0642\u0627\u0626\u0645\u0629 \u0645\u0646\u0635\u0629 \u0643\u0627\u0641");
 		
 		Label lblNewLabel_1 = new Label(shell, SWT.NONE);
-		lblNewLabel_1.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\Doaa\\Pictures\\KaffPlatformheade.jpeg"));
+		lblNewLabel_1.setBackgroundImage(SWTResourceManager.getImage("C:\\\\Users\\\\Admin\\\\git\\\\KaffPlatform\\\\KaffPlatformProject\\\\img\\\\KaffPlatformheader.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 441, 46);
 		
 		Label label = new Label(shell, SWT.SEPARATOR | SWT.HORIZONTAL);

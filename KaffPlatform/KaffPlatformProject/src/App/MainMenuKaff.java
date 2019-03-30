@@ -46,6 +46,7 @@ public class MainMenuKaff {
 		shell = new Shell();
 		shell.setSize(616, 440);
 		shell.setText("منصة كاف");
+		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\منصة كاف.jpg"));
 		
 		Composite background = new Composite(shell, SWT.NONE);
 		background.setLocation(0, 0);
@@ -54,8 +55,8 @@ public class MainMenuKaff {
 		
 		Label KaffLogo = new Label(background, SWT.NONE);
 		KaffLogo.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		KaffLogo.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\\u0645\u0646\u0635\u0629 \u0643\u0627\u0641.jpg"));
-		KaffLogo.setBounds(107, 27, 418, 261);
+		KaffLogo.setImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\منصة كاف.jpg"));
+		KaffLogo.setBounds(107, 10, 418, 261);
 		
 		Button searchButton = new Button(background, SWT.NONE);
 		searchButton.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));

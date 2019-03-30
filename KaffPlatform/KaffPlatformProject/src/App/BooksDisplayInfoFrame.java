@@ -47,14 +47,14 @@ public class BooksDisplayInfoFrame {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\منصة كاف.jpg"));
-		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\Level 6\\Kaff Project\\Background.jpeg"));
+		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\منصة كاف.jpg"));
+		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\Background.jpeg"));
 		//shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		shell.setSize(591, 647);
 		shell.setText("عرض  معلومات الكتب");
 		
 		Label headerLabel = new Label(shell, SWT.NONE);
-		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\KaffPlatformheader.jpg"));
+		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\KaffPlatformheader.jpg"));
 		headerLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		headerLabel.setBounds(0, 0, 607, 50);
 		

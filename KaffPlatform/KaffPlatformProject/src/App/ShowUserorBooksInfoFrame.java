@@ -45,9 +45,9 @@ public class ShowUserorBooksInfoFrame {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\Level 6\\Kaff Project\\Background.jpeg"));
+		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\Background.jpeg"));
 
-		shell.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\\u0645\u0646\u0635\u0629 \u0643\u0627\u0641.jpg"));
+		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\منصة كاف.jpg"));
 		shell.setSize(600, 410);
 		shell.setText("اختيار العرض");
 		
@@ -59,7 +59,7 @@ public class ShowUserorBooksInfoFrame {
 		menuCombo.select(1);
 		
 		Label headerLabel = new Label(shell, SWT.NONE);
-		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\KaffPlatformheader.jpg"));
+		headerLabel.setImage(SWTResourceManager.getImage("C:\\\\Users\\\\Admin\\\\git\\\\KaffPlatform\\\\KaffPlatformProject\\\\img\\\\KaffPlatformheader.jpg"));
 		headerLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		headerLabel.setBounds(0, 0, 607, 50);
 		
@@ -75,7 +75,7 @@ public class ShowUserorBooksInfoFrame {
 		
 		Label SignOutLabel = new Label(shell, SWT.NONE);
 		SignOutLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		SignOutLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\Level 6\\Kaff Project\\signout small.png"));
+		SignOutLabel.setImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\signout small.png"));
 		SignOutLabel.setBounds(0, 26, 40, 47);
 
 	}

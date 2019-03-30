@@ -57,11 +57,12 @@ public class AddBookKaff {
 	protected void createContents() {
 		shell = new Shell();
 		shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\منصة كاف.jpg"));
 		shell.setSize(599, 779);
 		shell.setText("إضافة كتاب جديد");
 		
 		Label headerLabel = new Label(shell, SWT.NONE);
-		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\KaffPlatformheader.jpg"));
+		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\KaffPlatformheader.jpg"));
 		headerLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		headerLabel.setBounds(0, 0, 607, 50);
 		

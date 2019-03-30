@@ -45,7 +45,7 @@ public class Add {
 	protected void createContents() {
 		shell = new Shell();
 		shell.setBackground(SWTResourceManager.getColor(255, 255, 255));
-		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Doaa\\Pictures\\\u0646\u0646\u0635\u0647.png"));
+		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\منصة كاف.jpg"));
 		shell.setSize(450, 300);
 		shell.setText("\u0645\u0646\u0635\u0629 \u0643\u0627\u0641");
 		

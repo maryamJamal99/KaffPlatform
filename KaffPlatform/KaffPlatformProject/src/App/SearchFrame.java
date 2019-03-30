@@ -52,8 +52,8 @@ public class SearchFrame {
 	protected void createContents() {
 		shell = new Shell();
 		shell.setText("\u0645\u0639\u0644\u0648\u0645\u0627\u062A \u0627\u0644\u0643\u062A\u0627\u0628");
-		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Doaa\\Pictures\\Background.jpeg"));
-		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\Doaa\\Pictures\\Background.jpeg"));
+		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\منصة كاف.jpg"));
+		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\Background.jpeg"));
 		shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_HIGHLIGHT_SHADOW));
 		shell.setSize(467, 454);
 		
@@ -164,7 +164,7 @@ public class SearchFrame {
 		btnNewButton_1.setText("\u063A\u064A\u0631 \u0645\u062A\u0648\u0641\u0631");
 		
 		Label label_3 = new Label(shell, SWT.NONE);
-		label_3.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\Doaa\\Pictures\\KaffPlatformheade.jpeg"));
+		label_3.setBackgroundImage(SWTResourceManager.getImage("C:\\\\Users\\\\Admin\\\\git\\\\KaffPlatform\\\\KaffPlatformProject\\\\img\\\\KaffPlatformheader.jpg"));
 		label_3.setBounds(0, 0, 451, 42);
 		
 
