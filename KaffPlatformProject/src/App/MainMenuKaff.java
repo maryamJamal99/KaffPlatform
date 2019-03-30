@@ -6,6 +6,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class MainMenuKaff {
 
@@ -38,24 +40,30 @@ public class MainMenuKaff {
 			}
 		}
 	}
+	
+	public void close(){
+		//store data maybe in log file??
+		shell.close();
+	}
 
 	/**
 	 * Create contents of the window.
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setSize(616, 440);
+		shell.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\منصة كاف.jpg"));
+		shell.setSize(616, 450);
 		shell.setText("منصة كاف");
 		
 		Composite background = new Composite(shell, SWT.NONE);
 		background.setLocation(0, 0);
 		background.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		background.setSize(600, 396);
+		background.setSize(600, 406);
 		
 		Label KaffLogo = new Label(background, SWT.NONE);
 		KaffLogo.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		KaffLogo.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\\u0645\u0646\u0635\u0629 \u0643\u0627\u0641.jpg"));
-		KaffLogo.setBounds(107, 27, 418, 261);
+		KaffLogo.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\منصة كاف.jpg"));
+		KaffLogo.setBounds(107, 10, 418, 261);
 		
 		Button searchButton = new Button(background, SWT.NONE);
 		searchButton.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
@@ -63,6 +71,14 @@ public class MainMenuKaff {
 		searchButton.setText("\u0627\u0644\u0628\u062D\u062B");
 		
 		Button signInButton = new Button(background, SWT.NONE);
+		signInButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				//show sign in frame 
+				SignInFrame sif = new SignInFrame();
+				sif.open();
+ 			}
+		});
 		signInButton.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
 		signInButton.setText("\u062A\u0633\u062C\u064A\u0644 \u0627\u0644\u062F\u062E\u0648\u0644");
 		signInButton.setBounds(330, 309, 137, 49);
