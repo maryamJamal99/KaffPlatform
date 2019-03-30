@@ -8,6 +8,8 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Slider;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.wb.swt.SWTResourceManager;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class BooksDisplayInfoFrame {
 
@@ -47,14 +49,14 @@ public class BooksDisplayInfoFrame {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\منصة كاف.jpg"));
-		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\Level 6\\Kaff Project\\Background.jpeg"));
+		shell.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\logo small.png"));
+		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\Background.jpeg"));
 		//shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		shell.setSize(591, 647);
 		shell.setText("عرض  معلومات الكتب");
 		
 		Label headerLabel = new Label(shell, SWT.NONE);
-		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\KaffPlatformheader.jpg"));
+		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\KaffPlatformheader.jpg"));
 		headerLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		headerLabel.setBounds(0, 0, 607, 50);
 		
@@ -70,6 +72,14 @@ public class BooksDisplayInfoFrame {
 		booksLabel.setText("معلومات الكتب");
 		
 		Button backButton = new Button(shell, SWT.NONE);
+		backButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				AdminMenu am = new AdminMenu();
+				am.open();
+			}
+		});
+		
 		backButton.setFont(SWTResourceManager.getFont("B Badr", 9, SWT.NORMAL));
 		backButton.setBounds(501, 56, 55, 26);
 		backButton.setText("\u0631\u062C\u0648\u0639");

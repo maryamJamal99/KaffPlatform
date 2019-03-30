@@ -20,16 +20,18 @@ public class Shelve {
 	RowSet rowSet;
 	PreparedStatement ps; 
 	
-	Query[] quires = 
-		{	new Query("remove book", "drop ..."), 
-			new Query("owns by", "Select ...."), 
-			new Query("borowed books", "Select ..."),
-			new Query("add book", "Inset into..."), 
-			new Query("sold books", "Select ..."),
-			new Query("book title", "Select where bookTitle = ?"),
-			new Query("books by level", "Select where level = ?"),
-			new Query("all books", "Select * from kaff.books")
-		};
+//	Query[] quires = 
+//		{	new Query("remove book", "drop ..."), 
+//			new Query("owns by", "Select ...."), 
+//			new Query("borowed books", "Select ..."),
+//			new Query("add book", "Inset into..."), 
+//			new Query("sold books", "Select ..."),
+//			new Query("book title", "Select where bookTitle = ?"),
+//			new Query("books by level", "Select where level = ?"),
+//			new Query("all books", "Select * from kaff.books")
+//		};
+	
+	//file of queries
 	
 	public Shelve() throws SQLException{
 		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/kaff", "root", "root123");

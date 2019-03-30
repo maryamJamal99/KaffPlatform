@@ -89,21 +89,6 @@ public class UsersDisplayInfoFrame {
 		logoBtn.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\logo for header button.png"));
 		logoBtn.setBounds(491, 0, 74, 42);
 		
-		Group group = new Group(shell, SWT.NONE);
-		group.setBounds(99, 136, 364, 42);
-		
-		Button button = new Button(group, SWT.RADIO);
-		button.setBounds(2, 21, 130, 21);
-		button.setText("كل المستخدمين");
-		
-		Button button_1 = new Button(group, SWT.RADIO);
-		button_1.setBounds(138, 21, 110, 21);
-		button_1.setText("المستعيرين");
-		
-		Button button_2 = new Button(group, SWT.RADIO);
-		button_2.setBounds(253, 21, 110, 21);
-		button_2.setText("المشترين");
-		
 		Label headerLabel = new Label(shell, SWT.NONE);
 		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\KaffPlatformheader.jpg"));
 		headerLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));

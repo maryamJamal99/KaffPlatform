@@ -66,6 +66,13 @@ public class MainMenuKaff {
 		KaffLogo.setBounds(107, 10, 418, 261);
 		
 		Button searchButton = new Button(background, SWT.NONE);
+		searchButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				SearchFrame sf = new SearchFrame();
+				sf.open();
+			}
+		});
 		searchButton.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
 		searchButton.setBounds(136, 309, 131, 49);
 		searchButton.setText("\u0627\u0644\u0628\u062D\u062B");
