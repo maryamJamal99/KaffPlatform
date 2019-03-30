@@ -11,6 +11,8 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class AddBookKaff {
 
@@ -60,8 +62,19 @@ public class AddBookKaff {
 		shell.setSize(599, 779);
 		shell.setText("إضافة كتاب جديد");
 		
+		Button logoBtn = new Button(shell, SWT.NONE);
+		logoBtn.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				MainMenuKaff mm = new MainMenuKaff();
+				mm.open();
+			}
+		});
+		logoBtn.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\logo for header button.png"));
+		logoBtn.setBounds(497, 0, 64, 50);
+		
 		Label headerLabel = new Label(shell, SWT.NONE);
-		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\KaffPlatformheader.jpg"));
+		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\KaffPlatformheader.jpg"));
 		headerLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		headerLabel.setBounds(0, 0, 607, 50);
 		
@@ -224,16 +237,16 @@ public class AddBookKaff {
 		addButton.setText("إضافة");
 		
 		Button backButton = new Button(shell, SWT.NONE);
+		backButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				AdminMenu am = new AdminMenu();
+				am.open();
+			}
+		});
 		backButton.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
 		backButton.setBounds(150, 666, 85, 26);
 		backButton.setText("رجوع");
-		
-		Combo menuCombo = new Combo(shell, SWT.NONE);
-		menuCombo.setBackground(SWTResourceManager.getColor(255, 228, 196));
-		menuCombo.setFont(SWTResourceManager.getFont("B Badr", 14, SWT.NORMAL));
-		menuCombo.setItems(new String[] {"إضافة كتاب جديد", "عرض معلومات الكتب أو المستخدمين"});
-		menuCombo.setBounds(126, 56, 326, 32);
-		menuCombo.select(0);
 
 	}
 }
