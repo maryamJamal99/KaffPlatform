@@ -12,11 +12,12 @@ import org.eclipse.swt.widgets.CoolBar;
 import org.eclipse.swt.widgets.Slider;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.custom.ViewForm;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class UsersDisplayInfoFrame {
 
 	protected Shell shell;
-	private Table userTable;
 
 	/**
 	 * Launch the application.
@@ -51,18 +52,11 @@ public class UsersDisplayInfoFrame {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\Level 6\\Kaff Project\\Background.jpeg"));
+		shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+		shell.setBackgroundImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\Background.jpeg"));
 		//shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		shell.setSize(591, 647);
 		shell.setText("عرض  معلومات المستخدمين");
-		
-		Label headerLabel = new Label(shell, SWT.NONE);
-		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\KaffPlatformheader.jpg"));
-		headerLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		headerLabel.setBounds(0, 0, 607, 50);
-		
-		Slider slider = new Slider(shell, SWT.NONE);
-		slider.setBounds(96, 553, 396, 22);
 		
 		Label usersInfoLabel = new Label(shell, SWT.NONE);
 		usersInfoLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
@@ -72,26 +66,33 @@ public class UsersDisplayInfoFrame {
 		usersInfoLabel.setBounds(0, 92, 585, 38);
 		usersInfoLabel.setText("\u0645\u0639\u0644\u0648\u0645\u0627\u062A \u0627\u0644\u0645\u0633\u062A\u062E\u062F\u0645\u064A\u0646");
 		
-		Button button = new Button(shell, SWT.NONE);
-		button.setFont(SWTResourceManager.getFont("B Badr", 9, SWT.NORMAL));
-		button.setBounds(491, 60, 65, 26);
-		button.setText("\u0631\u062C\u0648\u0639");
+		Button backBtn = new Button(shell, SWT.NONE);
+		backBtn.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				AdminMenu am = new AdminMenu();
+				am.open();
+			}
+		});
+		backBtn.setFont(SWTResourceManager.getFont("B Badr", 9, SWT.NORMAL));
+		backBtn.setBounds(491, 60, 65, 26);
+		backBtn.setText("\u0631\u062C\u0648\u0639");
 		
-		ViewForm viewForm = new ViewForm(shell, SWT.NONE);
-		viewForm.setBounds(33, 136, 523, 411);
+		Button logoBtn = new Button(shell, SWT.NONE);
+		logoBtn.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				MainMenuKaff menu = new MainMenuKaff();
+				menu.open();
+			}
+		});
+		logoBtn.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\logo for header button.png"));
+		logoBtn.setBounds(491, 0, 74, 42);
 		
-		userTable = new Table(viewForm, SWT.BORDER | SWT.FULL_SELECTION);
-		viewForm.setContent(userTable);
-		userTable.setHeaderVisible(true);
-		userTable.setLinesVisible(true);
-		
-		Button borrowersButton = new Button(viewForm, SWT.NONE);
-		viewForm.setTopLeft(borrowersButton);
-		borrowersButton.setText("المستعيرين");
-		
-		Button allUsersButton = new Button(viewForm, SWT.NONE);
-		viewForm.setTopCenter(allUsersButton);
-		allUsersButton.setText("الجميع");
+		Label headerLabel = new Label(shell, SWT.NONE);
+		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\git\\KaffPlatform\\KaffPlatformProject\\img\\KaffPlatformheader.jpg"));
+		headerLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+		headerLabel.setBounds(0, 0, 585, 50);
 
 	}
 }

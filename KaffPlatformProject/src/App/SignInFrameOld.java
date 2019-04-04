@@ -1,4 +1,4 @@
-package org.eclipse.wb.swt;
+package App;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
@@ -60,8 +60,9 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.wb.swt.SWTResourceManager;
 
-public class SignInFrame {
+public class SignInFrameOld {
 
 	protected Shell shell;
 	private Text usernameTxt;
@@ -76,7 +77,7 @@ public class SignInFrame {
 	 */
 	public static void main(String[] args) {
 		try {
-			SignInFrame window = new SignInFrame();
+			SignInFrameOld window = new SignInFrameOld();
 			window.open();
 		} catch (Exception e) {
 			e.printStackTrace();
