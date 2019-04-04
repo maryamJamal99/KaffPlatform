@@ -43,6 +43,7 @@ public class AddBookKaff {
 	 */
 	public void open() {
 		Display display = Display.getDefault();
+		
 		createContents();
 		shell.open();
 		shell.layout();
@@ -247,6 +248,14 @@ public class AddBookKaff {
 		backButton.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
 		backButton.setBounds(150, 666, 85, 26);
 		backButton.setText("رجوع");
+		
+		Label label = new Label(shell, SWT.NONE);
+		label.setBounds(177, 72, 192, 21);
+		label.setText("إضافة كتاب جديد");
+		
+		Label label_1 = new Label(shell, SWT.NONE);
+		label_1.setBounds(0, 23, 69, 21);
+		label_1.setText("مرحباً ...؟");
 
 	}
 }
