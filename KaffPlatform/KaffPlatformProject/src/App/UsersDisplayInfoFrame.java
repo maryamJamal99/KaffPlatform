@@ -16,7 +16,7 @@ import org.eclipse.swt.custom.ViewForm;
 public class UsersDisplayInfoFrame {
 
 	protected Shell shell;
-	private Table userTable;
+	private Table table;
 
 	/**
 	 * Launch the application.
@@ -62,37 +62,42 @@ public class UsersDisplayInfoFrame {
 		headerLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		headerLabel.setBounds(0, 0, 607, 50);
 		
-		Slider slider = new Slider(shell, SWT.NONE);
-		slider.setBounds(75, 553, 455, 22);
-		
 		Label usersInfoLabel = new Label(shell, SWT.NONE);
 		usersInfoLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		usersInfoLabel.setFont(SWTResourceManager.getFont("B Badr", 14, SWT.NORMAL));
 		usersInfoLabel.setForeground(SWTResourceManager.getColor(210, 105, 30));
 		usersInfoLabel.setAlignment(SWT.CENTER);
-		usersInfoLabel.setBounds(0, 92, 585, 38);
+		usersInfoLabel.setBounds(144, 92, 276, 38);
 		usersInfoLabel.setText("\u0645\u0639\u0644\u0648\u0645\u0627\u062A \u0627\u0644\u0645\u0633\u062A\u062E\u062F\u0645\u064A\u0646");
 		
 		Button button = new Button(shell, SWT.NONE);
 		button.setFont(SWTResourceManager.getFont("B Badr", 9, SWT.NORMAL));
-		button.setBounds(491, 60, 65, 26);
+		button.setBounds(494, 60, 65, 26);
 		button.setText("\u0631\u062C\u0648\u0639");
 		
 		ViewForm viewForm = new ViewForm(shell, SWT.NONE);
-		viewForm.setBounds(33, 136, 523, 411);
+		viewForm.setBounds(33, 217, 501, 330);
 		
-		userTable = new Table(viewForm, SWT.BORDER | SWT.FULL_SELECTION);
-		viewForm.setContent(userTable);
-		userTable.setHeaderVisible(true);
-		userTable.setLinesVisible(true);
+		table = new Table(viewForm, SWT.BORDER | SWT.FULL_SELECTION);
+		viewForm.setContent(table);
+		table.setHeaderVisible(true);
+		table.setLinesVisible(true);
 		
-		Button borrowersButton = new Button(viewForm, SWT.NONE);
-		viewForm.setTopLeft(borrowersButton);
+		Button borrowersButton = new Button(shell, SWT.NONE);
+		borrowersButton.setBounds(318, 176, 105, 35);
 		borrowersButton.setText("المستعيرين");
 		
-		Button allUsersButton = new Button(viewForm, SWT.NONE);
-		viewForm.setTopCenter(allUsersButton);
+		Button allUsersButton = new Button(shell, SWT.NONE);
+		allUsersButton.setBounds(429, 176, 105, 35);
 		allUsersButton.setText("الجميع");
+		
+		Button button_1 = new Button(shell, SWT.NONE);
+		button_1.setBounds(33, 176, 105, 35);
+		button_1.setText("تعديل");
+		
+		Button button_2 = new Button(shell, SWT.NONE);
+		button_2.setBounds(144, 176, 105, 35);
+		button_2.setText("حذف");
 
 	}
 }
