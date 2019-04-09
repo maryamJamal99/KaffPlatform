@@ -51,13 +51,6 @@ public class ShowUserorBooksInfoFrame {
 		shell.setSize(600, 410);
 		shell.setText("اختيار العرض");
 		
-		Combo menuCombo = new Combo(shell, SWT.NONE);
-		menuCombo.setItems(new String[] {"إضافة كتاب جديد", "عرض معلومات الكتب أو المستخدمين"});
-		menuCombo.setFont(SWTResourceManager.getFont("B Badr", 14, SWT.NORMAL));
-		menuCombo.setBackground(SWTResourceManager.getColor(255, 228, 196));
-		menuCombo.setBounds(146, 55, 297, 47);
-		menuCombo.select(1);
-		
 		Label headerLabel = new Label(shell, SWT.NONE);
 		headerLabel.setImage(SWTResourceManager.getImage("C:\\Users\\al5an\\Desktop\\iau\\KaffPlatformheader.jpg"));
 		headerLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
@@ -65,12 +58,12 @@ public class ShowUserorBooksInfoFrame {
 		
 		Button displayBooksButton = new Button(shell, SWT.NONE);
 		displayBooksButton.setFont(SWTResourceManager.getFont("B Badr", 13, SWT.BOLD));
-		displayBooksButton.setBounds(106, 175, 138, 78);
+		displayBooksButton.setBounds(107, 159, 138, 78);
 		displayBooksButton.setText("\u0639\u0631\u0636 \u0627\u0644\u0643\u062A\u0628");
 		
 		Button DisplayUsersButton = new Button(shell, SWT.NONE);
 		DisplayUsersButton.setFont(SWTResourceManager.getFont("B Badr", 13, SWT.BOLD));
-		DisplayUsersButton.setBounds(269, 175, 218, 78);
+		DisplayUsersButton.setBounds(272, 159, 218, 78);
 		DisplayUsersButton.setText("\u0639\u0631\u0636 \u0645\u0639\u0644\u0648\u0645\u0627\u062A \u0627\u0644\u0645\u0633\u062A\u062E\u062F\u0645\u064A\u0646");
 		
 		Label SignOutLabel = new Label(shell, SWT.NONE);
