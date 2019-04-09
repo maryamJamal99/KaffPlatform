@@ -9,38 +9,39 @@ import java.sql.Statement;
 import javax.sql.RowSet;
 
 public abstract class Database {
-	
+
 	private static Connection connection;
 	private static Statement statement;
 	ResultSet resultSet;
 	RowSet rowSet;
-	
+
 	String[] queries = {};
-	public Database() throws SQLException {	
-		
+
+	public Database() throws SQLException {
+
 	}
-	
-	public static Connection getConnection(){
+
+	public static Connection getConnection() {
 		return connection;
 	}
-	
-	public static Statement getStatment(){
+
+	public static Statement getStatment() {
 		return statement;
 	}
-	
-	public static void openConnection() throws SQLException{
-		String url="jdbc:mysql://localhost:3306/kaff";
+
+	public static void openConnection() throws SQLException {
+		String url = "jdbc:mysql://localhost:3306/kaff";
 		connection = DriverManager.getConnection(url, "root", "root123");
 		statement = connection.createStatement();
 	}
 
-	public static void closeConnection() throws SQLException{
-		//close connection
+	public static void closeConnection() throws SQLException {
+		// close connection
 		connection.close();
 	}
-	public String toString(){
+
+	public String toString() {
 		return "successful";
 	}
 
 }
-
