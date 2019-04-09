@@ -116,7 +116,7 @@ public class UsersDisplayInfoFrame {
 		fd_viewForm.left = new FormAttachment(0, 33);
 		viewForm.setLayoutData(fd_viewForm);
 
-		String Query = "SELECT * FROM kaff.user";
+		String Query = "select userID,fname,phone,userLevel,email from kaff.user";
 		table = new Table(viewForm, SWT.BORDER | SWT.FULL_SELECTION);
 
 		TableColumn column1 = new TableColumn(table, SWT.RIGHT);
@@ -137,14 +137,14 @@ public class UsersDisplayInfoFrame {
 		column4.setWidth(80);
 		column5.setWidth(170);
 
-		TableItem item1 = new TableItem(table, SWT.NONE);
-		item1.setText(new String[] { "2170008191", "مريم", "05522334444", "6", "meme@g.com" });
-		TableItem item2 = new TableItem(table, SWT.NONE);
-		item2.setText(new String[] { "2170008191", "مريم", "05522334444", "6", "meme@g.com" });
-		TableItem item3 = new TableItem(table, SWT.NONE);
-		item3.setText(new String[] { "2170008191", "مريم", "05522334444", "6", "meme@g.com" });
-		TableItem item4 = new TableItem(table, SWT.NONE);
-		item4.setText(new String[] { "2170008191", "مريم", "05522334444", "6", "meme@g.com" });
+//		TableItem item1 = new TableItem(table, SWT.NONE);
+	//	item1.setText(new String[] { "2170008191", "مريم", "05522334444", "6", "meme@g.com" });
+		//TableItem item2 = new TableItem(table, SWT.NONE);
+//		item2.setText(new String[] { "2170008191", "مريم", "05522334444", "6", "meme@g.com" });
+	//	TableItem item3 = new TableItem(table, SWT.NONE);
+		//item3.setText(new String[] { "2170008191", "مريم", "05522334444", "6", "meme@g.com" });
+//		TableItem item4 = new TableItem(table, SWT.NONE);
+	//	item4.setText(new String[] { "2170008191", "مريم", "05522334444", "6", "meme@g.com" });
 
 		viewForm.setContent(table);
 		table.setHeaderVisible(true);
@@ -178,7 +178,7 @@ public class UsersDisplayInfoFrame {
 			@Override
 			public void mouseDoubleClick(MouseEvent e) {
 				try {
-					String sql = "SELECT userID,fname,phone,userLevel,email from user";
+					String sql = "SELECT userID,fname,phone,userLevel,email from kaff.user";
 					Database.openConnection();
 					ResultSet rs = Database.getStatment().executeQuery(sql);
 
