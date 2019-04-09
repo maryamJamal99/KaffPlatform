@@ -27,6 +27,8 @@ import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class UsersDisplayInfoFrame {
 
@@ -66,9 +68,8 @@ public class UsersDisplayInfoFrame {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setBackground(SWTResourceManager.getColor(255, 255, 255));
-		shell.setBackgroundImage(SWTResourceManager
-				.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\Background.jpeg"));
+		shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+		shell.setBackgroundImage(null);
 		// shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		shell.setImage(SWTResourceManager
 				.getImage("C:\\Users\\Admin\\git\\KaffPlatform\\KaffPlatformProject\\img\\منصة كاف.jpg"));
@@ -88,9 +89,9 @@ public class UsersDisplayInfoFrame {
 
 		Label usersInfoLabel = new Label(shell, SWT.NONE);
 		FormData fd_usersInfoLabel = new FormData();
+		fd_usersInfoLabel.top = new FormAttachment(headerLabel, 40);
 		fd_usersInfoLabel.left = new FormAttachment(0, 214);
 		fd_usersInfoLabel.right = new FormAttachment(0, 508);
-		fd_usersInfoLabel.top = new FormAttachment(0, 90);
 		usersInfoLabel.setLayoutData(fd_usersInfoLabel);
 		usersInfoLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		usersInfoLabel.setFont(SWTResourceManager.getFont("B Badr", 14, SWT.NORMAL));
@@ -109,6 +110,7 @@ public class UsersDisplayInfoFrame {
 		button.setText("\u0631\u062C\u0648\u0639");
 
 		ViewForm viewForm = new ViewForm(shell, SWT.NONE);
+		fd_usersInfoLabel.bottom = new FormAttachment(viewForm, -89);
 		FormData fd_viewForm = new FormData();
 		fd_viewForm.bottom = new FormAttachment(0, 547);
 		fd_viewForm.right = new FormAttachment(0, 687);
@@ -201,36 +203,16 @@ public class UsersDisplayInfoFrame {
 			}
 		});
 
-		Button borrowersButton = new Button(shell, SWT.NONE);
-		fd_usersInfoLabel.bottom = new FormAttachment(borrowersButton, -32);
-		FormData fd_borrowersButton = new FormData();
-		fd_borrowersButton.left = new FormAttachment(0, 437);
-		borrowersButton.setLayoutData(fd_borrowersButton);
-		borrowersButton.setText("المستعيرين");
-
-		Button allUsersButton = new Button(shell, SWT.NONE);
-		fd_borrowersButton.top = new FormAttachment(allUsersButton, 0, SWT.TOP);
-		fd_borrowersButton.right = new FormAttachment(allUsersButton, -40);
-		FormData fd_allUsersButton = new FormData();
-		fd_allUsersButton.bottom = new FormAttachment(viewForm, -22);
-		fd_allUsersButton.right = new FormAttachment(viewForm, 0, SWT.RIGHT);
-		fd_allUsersButton.left = new FormAttachment(0, 582);
-		allUsersButton.setLayoutData(fd_allUsersButton);
-		allUsersButton.setText("الجميع");
-
 		Button button_1 = new Button(shell, SWT.NONE);
 		FormData fd_button_1 = new FormData();
-		fd_button_1.right = new FormAttachment(0, 921);
-		fd_button_1.top = new FormAttachment(0, 489);
-		fd_button_1.left = new FormAttachment(0, 816);
+		fd_button_1.right = new FormAttachment(0, 822);
 		button_1.setLayoutData(fd_button_1);
 		button_1.setText("تعديل");
 
 		Button button_2 = new Button(shell, SWT.NONE);
 		FormData fd_button_2 = new FormData();
-		fd_button_2.right = new FormAttachment(0, 1057);
-		fd_button_2.top = new FormAttachment(0, 489);
-		fd_button_2.left = new FormAttachment(0, 952);
+		fd_button_2.top = new FormAttachment(button_1, 0, SWT.TOP);
+		fd_button_2.right = new FormAttachment(0, 953);
 		button_2.setLayoutData(fd_button_2);
 		button_2.setText("حذف");
 
@@ -258,6 +240,7 @@ public class UsersDisplayInfoFrame {
 		label_1.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 
 		text = new Text(shell, SWT.BORDER);
+		fd_button_1.left = new FormAttachment(text, 0, SWT.LEFT);
 		FormData fd_text = new FormData();
 		fd_text.bottom = new FormAttachment(0, 241);
 		fd_text.right = new FormAttachment(0, 940);
@@ -272,7 +255,7 @@ public class UsersDisplayInfoFrame {
 		fd_label_2.top = new FormAttachment(0, 274);
 		fd_label_2.left = new FormAttachment(0, 958);
 		label_2.setLayoutData(fd_label_2);
-		label_2.setText("الاسم الثلاثي");
+		label_2.setText("الاسم");
 		label_2.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
 		label_2.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 
@@ -315,6 +298,7 @@ public class UsersDisplayInfoFrame {
 		label_4.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 
 		Combo combo = new Combo(shell, SWT.NONE);
+		fd_button_2.left = new FormAttachment(combo, 0, SWT.LEFT);
 		FormData fd_combo = new FormData();
 		fd_combo.top = new FormAttachment(label_4, -3, SWT.TOP);
 		fd_combo.right = new FormAttachment(text, 0, SWT.RIGHT);
@@ -335,11 +319,28 @@ public class UsersDisplayInfoFrame {
 		label_5.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 
 		text_3 = new Text(shell, SWT.BORDER);
+		fd_button_1.top = new FormAttachment(text_3, 40);
 		FormData fd_text_3 = new FormData();
 		fd_text_3.left = new FormAttachment(text, 0, SWT.LEFT);
 		fd_text_3.top = new FormAttachment(label_5, 0, SWT.TOP);
 		fd_text_3.right = new FormAttachment(text, 0, SWT.RIGHT);
 		text_3.setLayoutData(fd_text_3);
+		
+		Button btnVu = new Button(shell, SWT.NONE);
+		btnVu.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				AdminMenu am = new AdminMenu();
+				shell.close();
+				am.open();
+			}
+		});
+		btnVu.setText("رجوع");
+		FormData fd_btnVu = new FormData();
+		fd_btnVu.right = new FormAttachment(button_2, 112, SWT.RIGHT);
+		fd_btnVu.top = new FormAttachment(button_1, 0, SWT.TOP);
+		fd_btnVu.left = new FormAttachment(button_2, 20);
+		btnVu.setLayoutData(fd_btnVu);
 
 	}
 }

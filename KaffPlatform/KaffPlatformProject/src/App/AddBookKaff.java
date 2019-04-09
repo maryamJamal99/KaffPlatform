@@ -284,8 +284,7 @@ public class AddBookKaff {
 					ownerStatement.setString(4, lname);
 					ownerStatement.setString(5, phone);
 					ownerStatement.setInt(6, userLevel);
-					ownerStatement.setString(7, ownerID + "iau.edu.sa");
-					ownerStatement.setString(8, email);
+					ownerStatement.setString(7, email);
 					int ownRes = ownerStatement.executeUpdate();
 
 					System.out.println("results: " + ownRes + " " + edResult + " bookre");
