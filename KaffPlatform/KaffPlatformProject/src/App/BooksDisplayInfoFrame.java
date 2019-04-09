@@ -34,11 +34,13 @@ public class BooksDisplayInfoFrame {
 	private Text bookTypeTxt;
 	private Text bookEdition;
 	private Text bookPriceTxt;
+	private Text bookOwnerTxt;
 	private Combo comboBookLevel;
 	Group groupAvailable;
 	Button buttonNotAva;
-	Button buttonAva, 	saleButton, borrowBtn, freeButton;
-	Button backBtn,  editBtn, cancelBtn, deleteBtn;
+	Button buttonAva, saleButton, borrowBtn, freeButton;
+	Button backBtn, editBtn, cancelBtn, deleteBtn;
+	private Text ownerIDTxt;
 
 	/**
 	 * Launch the application.
@@ -118,35 +120,35 @@ public class BooksDisplayInfoFrame {
 		borrowedBooksButton.setText("عرض الكتب المعارة");
 
 		bookIDTxt = new Text(shell, SWT.BORDER);
-		bookIDTxt.setBounds(863, 190, 119, 24);
+		bookIDTxt.setBounds(862, 146, 119, 24);
 
 		Label bookIDLabel = new Label(shell, SWT.NONE);
 		bookIDLabel.setText("رمز الكتاب");
 		bookIDLabel.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
 		bookIDLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		bookIDLabel.setBounds(1007, 187, 119, 32);
+		bookIDLabel.setBounds(1006, 143, 119, 32);
 
 		bookTitleTxt = new Text(shell, SWT.BORDER);
-		bookTitleTxt.setBounds(715, 228, 267, 24);
+		bookTitleTxt.setBounds(714, 184, 267, 24);
 
 		Label label_1 = new Label(shell, SWT.NONE);
 		label_1.setText("عنوان الكتاب");
 		label_1.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
 		label_1.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		label_1.setBounds(1007, 228, 119, 28);
+		label_1.setBounds(1006, 184, 119, 28);
 
 		bookEdition = new Text(shell, SWT.BORDER);
-		bookEdition.setBounds(863, 274, 119, 24);
+		bookEdition.setBounds(862, 230, 119, 24);
 
 		Label label_2 = new Label(shell, SWT.NONE);
 		label_2.setText("إصدار الكتاب");
 		label_2.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
 		label_2.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		label_2.setBounds(1007, 271, 119, 28);
+		label_2.setBounds(1006, 227, 119, 28);
 
 		groupAvailable = new Group(shell, SWT.NONE);
 		groupAvailable.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		groupAvailable.setBounds(715, 320, 267, 35);
+		groupAvailable.setBounds(714, 276, 267, 35);
 
 		buttonAva = new Button(groupAvailable, SWT.RADIO);
 		buttonAva.setText("متوفر");
@@ -163,15 +165,15 @@ public class BooksDisplayInfoFrame {
 		label_3.setText("المستوى");
 		label_3.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
 		label_3.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		label_3.setBounds(1007, 383, 64, 27);
+		label_3.setBounds(1006, 339, 64, 27);
 
 		comboBookLevel = new Combo(shell, SWT.NONE);
 		comboBookLevel.setItems(new String[] { "3", "4", "5", "6", "7", "8", "9", "10" });
-		comboBookLevel.setBounds(918, 387, 64, 25);
+		comboBookLevel.setBounds(917, 343, 64, 25);
 		comboBookLevel.select(0);
 
 		Group groupBookType = new Group(shell, SWT.NONE);
-		groupBookType.setBounds(743, 439, 334, 24);
+		groupBookType.setBounds(742, 395, 334, 24);
 
 		freeButton = new Button(groupBookType, SWT.RADIO);
 		freeButton.setText("مجاناً");
@@ -184,8 +186,6 @@ public class BooksDisplayInfoFrame {
 		borrowBtn.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
 		borrowBtn.setBounds(130, 0, 73, 21);
 
-		
-	
 		saleButton = new Button(groupBookType, SWT.RADIO);
 		saleButton.setText("للبيع");
 		saleButton.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
@@ -195,31 +195,32 @@ public class BooksDisplayInfoFrame {
 		label_4.setText("السعر");
 		label_4.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
 		label_4.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		label_4.setBounds(1007, 484, 119, 28);
+		label_4.setBounds(1006, 440, 119, 28);
 
 		bookPriceTxt = new Text(shell, SWT.BORDER);
-		bookPriceTxt.setBounds(918, 487, 64, 24);
+		bookPriceTxt.setBounds(917, 443, 64, 24);
 
-		 backBtn = new Button(shell, SWT.NONE);
+		backBtn = new Button(shell, SWT.NONE);
+		backBtn.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				AdminMenu am = new AdminMenu();
+				shell.close();
+				am.open();
+			}
+		});
 		backBtn.setText("رجوع");
 		backBtn.setForeground(SWTResourceManager.getColor(255, 255, 255));
 		backBtn.setFont(SWTResourceManager.getFont("Dubai", 13, SWT.BOLD));
 		backBtn.setBackground(SWTResourceManager.getColor(128, 128, 128));
-		backBtn.setBounds(1026, 551, 76, 35);
-		
+		backBtn.setBounds(1026, 551, 76, 50);
+
 		editBtn = new Button(shell, SWT.NONE);
-		editBtn.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				//set row with the data in the text fields... 
-				
-			}
-		});
 		editBtn.setText("تعديل");
 		editBtn.setForeground(SWTResourceManager.getColor(255, 255, 255));
 		editBtn.setFont(SWTResourceManager.getFont("Dubai", 13, SWT.BOLD));
 		editBtn.setBackground(SWTResourceManager.getColor(128, 128, 128));
-		editBtn.setBounds(839, 551, 76, 35);
+		editBtn.setBounds(839, 551, 76, 50);
 
 		cancelBtn = new Button(shell, SWT.NONE);
 		cancelBtn.addSelectionListener(new SelectionAdapter() {
@@ -231,13 +232,14 @@ public class BooksDisplayInfoFrame {
 				bookEdition.setText("");
 				comboBookLevel.select(0);
 				bookPriceTxt.setText("0.0");
+				ownerIDTxt.setText("");
 			}
 		});
 		cancelBtn.setText("إلغاء");
 		cancelBtn.setForeground(SWTResourceManager.getColor(255, 255, 255));
 		cancelBtn.setFont(SWTResourceManager.getFont("Dubai", 13, SWT.BOLD));
 		cancelBtn.setBackground(SWTResourceManager.getColor(128, 128, 128));
-		cancelBtn.setBounds(743, 551, 76, 35);
+		cancelBtn.setBounds(743, 551, 76, 50);
 
 		Label label_5 = new Label(shell, SWT.NONE);
 		label_5.setText("تعديل معلــــــومات الكتاب");
@@ -245,7 +247,7 @@ public class BooksDisplayInfoFrame {
 		label_5.setFont(SWTResourceManager.getFont("Dubai", 16, SWT.BOLD));
 		label_5.setBackground(SWTResourceManager.getColor(255, 255, 255));
 		label_5.setAlignment(SWT.CENTER);
-		label_5.setBounds(725, 115, 412, 50);
+		label_5.setBounds(724, 71, 412, 50);
 
 		Label label_6 = new Label(shell, SWT.NONE);
 		label_6.setImage(SWTResourceManager
@@ -259,13 +261,22 @@ public class BooksDisplayInfoFrame {
 		label_7.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		label_7.setBounds(0, 0, 469, 50);
 
-		 deleteBtn = new Button(shell, SWT.NONE);
-		
+		deleteBtn = new Button(shell, SWT.NONE);
+
 		deleteBtn.setText("حذف");
 		deleteBtn.setForeground(SWTResourceManager.getColor(255, 255, 255));
 		deleteBtn.setFont(SWTResourceManager.getFont("Dubai", 13, SWT.BOLD));
 		deleteBtn.setBackground(SWTResourceManager.getColor(128, 128, 128));
-		deleteBtn.setBounds(933, 551, 76, 35);
+		deleteBtn.setBounds(933, 551, 76, 50);
+		
+		Label label = new Label(shell, SWT.NONE);
+		label.setText("صاحبة الكتاب");
+		label.setFont(SWTResourceManager.getFont("B Badr", 12, SWT.NORMAL));
+		label.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+		label.setBounds(1006, 474, 119, 28);
+		
+		ownerIDTxt = new Text(shell, SWT.BORDER);
+		ownerIDTxt.setBounds(724, 477, 257, 24);
 
 	}
 
@@ -324,7 +335,7 @@ public class BooksDisplayInfoFrame {
 								resultSet.getString(3), resultSet.getString(4), resultSet.getString(5),
 								resultSet.getString(6), resultSet.getString(7), resultSet.getString(8) });
 					}
-					
+
 					Database.closeConnection();
 
 				} catch (SQLException e) {
@@ -372,7 +383,6 @@ public class BooksDisplayInfoFrame {
 		String deleteBookQuery = "DELETE FROM kaff.book WHERE bookID = ?";
 		String updateQuery = "Update kaff.book set bookTitle = ? , "
 				+ "bookLevel = ?, bookType = ?, bookPrice = ?, available = ?, edition = ?, ownerID = ?, where bookId = ?";
-		
 
 		try {
 			Database.openConnection();
@@ -380,6 +390,7 @@ public class BooksDisplayInfoFrame {
 			PreparedStatement deleteStatement = Database.getConnection().prepareStatement(deleteBookQuery);
 			PreparedStatement ownerStatement = Database.getConnection().prepareStatement(ownerQuery);
 			PreparedStatement updateBook = Database.getConnection().prepareStatement(updateQuery);
+
 			bookStatement.setString(1, bookID);
 			deleteStatement.setString(1, bookID);
 			bookStatement.executeQuery();
@@ -393,52 +404,74 @@ public class BooksDisplayInfoFrame {
 				int level = Integer.parseInt(resultSet.getString("bookLevel"));
 				comboBookLevel.select(level);
 				String type = resultSet.getString("bookType");
-				if(type.equals("مجاناً"))
+				if (type.equals("مجاناً"))
 					freeButton.setSelection(true);
-				else if(type.equals("للبيع"))
+				else if (type.equals("للبيع"))
 					saleButton.setSelection(true);
 				else if (type.equals("إعارة"))
 					borrowBtn.setSelection(true);
-				
+
 				bookPriceTxt.setText(resultSet.getString("bookPrice"));
 				String ava = resultSet.getString("available");
-				if(ava.equals("1"))
+				if (ava.equals("1"))
 					buttonAva.setSelection(true);
 				else
 					buttonNotAva.setSelection(true);
-					
+
 				bookEdition.setText(resultSet.getString("edition"));
-				
+
 			}
-			
+
 			deleteBtn.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					try {
+						deleteStatement.setString(1, bookID);
 						ResultSet re = deleteStatement.executeQuery(deleteBookQuery);
 						Right r = new Right();
 						r.open();
 					} catch (SQLException e1) {
-						//add log
+						// add log
 						System.out.println("Error deleting the row...");
 					}
 				}
 			});
-			
+			/*
+			 * private Text bookIDTxt; private Text bookTitleTxt; private Text bookTypeTxt;
+			 * private Text bookEdition; private Text bookPriceTxt; private Text
+			 * bookOwnerTxt;
+			 */
+
+			/*
+			 * bookTitle bookLevel bookType bookPrice available edition ownerID
+			 */
 			editBtn.addSelectionListener(new SelectionAdapter() {
 				public void widgetSelected(SelectionEvent e) {
 					try {
-						ResultSet re = deleteStatement.executeQuery(deleteBookQuery);
+						updateBook.setString(1, bookID);
+						updateBook.setString(2, bookTitleTxt.getText());
+						updateBook.setString(3, comboBookLevel.getText());
+						updateBook.setString(4, bookTypeTxt.getText());
+						boolean ava = buttonAva.getSelection() == true ? true : false;
+						updateBook.setString(5, "");
+						updateBook.setString(6, bookEdition.getText());
+						updateBook.setString(7, bookPriceTxt.getText());
+						updateBook.setString(8, bookOwnerTxt.getText());
+
+						ResultSet result = updateBook.executeQuery(updateQuery);
+						FillTextFields(bookID);
 						Right r = new Right();
 						r.open();
 					} catch (SQLException e1) {
-						//add log
-						System.out.println("Error deleting the row...");
+						// add log
+//						ErrorFrame error = new ErrorFrame();
+//						error.open();
+						System.out.println("Error editing the row...");
 					}
 				}
-				
+
 			});
-			
+
 			Database.closeConnection();
 
 		} catch (SQLException sqle) {
